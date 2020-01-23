@@ -1,0 +1,13 @@
+{
+    "name": "laravel/database-exporter",
+    "description": "Export your database",
+    "license": "mit",
+    "authors": [
+        {
+            "name": "kilesss",
+            "email": "lmariqnov@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {}
+}
