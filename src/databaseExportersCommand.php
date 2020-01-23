@@ -6,7 +6,6 @@ use Illuminate\Console\Command;
 
 class databaseExportersCommand extends Command
 {
-    private $answers= [];
     /**
      * The name and signature of the console command.
      *
@@ -32,27 +31,12 @@ class databaseExportersCommand extends Command
     }
 
     /**
-     * Specify a question that should be asked when the command runs.
-     *
-     * @param  string  $question
-     * @param  string|array  $answer
-     * @return $this
-     */
-    public function expectsQuestion($question, $answer)
-    {
-        $this->test->expectedQuestions[] = [$question, $answer];
-
-        return $this;
-    }
-    /**
      * Execute the console command.
      *
      * @return mixed
      */
     public function handle()
     {
-
-
         $migration_name = $this->argument('migration_name');
         $controller = new databaseExporterController($migration_name);
         $controller->export();
