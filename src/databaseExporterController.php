@@ -3,7 +3,6 @@
 namespace databaseExporter;
 
 
-use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\File;
@@ -61,7 +60,7 @@ class databaseExporterController
 
     private function getTableData($tableName){
         foreach ($tableName as $Tname) {
-            $tableNameFile = $Tname . Carbon::now()->format('Y-m-d-H-i') . ".sql";
+            $tableNameFile = $Tname . date('Y-m-d-H-i') . ".sql";
             $sql = 'INSERT INTO `' . $Tname . '` (';
             $fields = Schema::getColumnListing($Tname);
             foreach ($fields as $key => $field) {
